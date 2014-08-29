@@ -116,7 +116,7 @@ end
 Date(y::Year,m::Month=Month(1),d::Day=Day(1)) = Date(value(y),value(m),value(d))
 
 # To allow any order/combination of Periods
-function DateTime(periods::Period...)
+#=function DateTime(periods::Period...)
     y = Year(1); m = Month(1); d = Day(1)
     h = Hour(0); mi = Minute(0); s = Second(0); ms = Millisecond(0)
     for p in periods
@@ -138,7 +138,7 @@ function Date(periods::Period...)
         typeof(p) <: Day && (d = p)
     end
     return Date(y,m,d)
-end
+end=#
 
 # Fallback constructors
 _c(x) = convert(Int64,x)
